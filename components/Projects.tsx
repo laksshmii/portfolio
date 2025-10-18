@@ -78,7 +78,6 @@ export function Projects() {
             fw={600}
             c="indigo"
             tt="uppercase"
-            ls={1}
             mb="xs"
           >
             Portfolio Showcase
@@ -171,23 +170,43 @@ export function Projects() {
                       </Group>
 
                       <Group>
-                        <Button
-                          leftSection={<IconExternalLink size={16} />}
-                          component={Anchor}
+                        <Anchor
                           href={project.liveUrl}
                           target="_blank"
+                          style={{
+                            textDecoration: 'none',
+                            padding: '8px 16px',
+                            borderRadius: '8px',
+                            background: 'var(--mantine-color-blue-6)',
+                            color: 'white',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            transition: 'all 0.2s ease',
+                          }}
                         >
+                          <IconExternalLink size={16} />
                           Live Demo
-                        </Button>
-                        <Button
-                          variant="outline"
-                          leftSection={<IconBrandGithub size={16} />}
-                          component={Anchor}
+                        </Anchor>
+                        <Anchor
                           href={project.githubUrl}
                           target="_blank"
+                          style={{
+                            textDecoration: 'none',
+                            padding: '8px 16px',
+                            borderRadius: '8px',
+                            background: 'transparent',
+                            color: 'var(--mantine-color-blue-6)',
+                            border: '1px solid var(--mantine-color-blue-6)',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            transition: 'all 0.2s ease',
+                          }}
                         >
+                          <IconBrandGithub size={16} />
                           Source Code
-                        </Button>
+                        </Anchor>
                       </Group>
                     </Stack>
                   </Box>
@@ -240,14 +259,24 @@ export function Projects() {
             <Text c="dimmed" mb="lg" maw={500} mx="auto">
               These are my key projects showcasing full-stack development skills. Check out my GitHub for more projects and contributions.
             </Text>
-            <Button
-              leftSection={<IconBrandGithub size={18} />}
-              component={Anchor}
+            <Anchor
               href="https://github.com/laksshmii"
               target="_blank"
+              style={{
+                textDecoration: 'none',
+                padding: '8px 16px',
+                borderRadius: '8px',
+                background: 'var(--mantine-color-blue-6)',
+                color: 'white',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                transition: 'all 0.2s ease',
+              }}
             >
+              <IconBrandGithub size={18} />
               View All Projects
-            </Button>
+            </Anchor>
           </Box>
         </motion.div>
       </Container>
