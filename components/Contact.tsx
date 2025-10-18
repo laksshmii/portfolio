@@ -63,7 +63,6 @@ export function Contact() {
             fw={600}
             c="indigo"
             tt="uppercase"
-            ls={1}
             mb="xs"
           >
             Get In Touch
@@ -113,8 +112,7 @@ export function Contact() {
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <Box
-                    component={Anchor}
+                  <Anchor
                     href={method.action}
                     p="xl"
                     style={{
@@ -156,7 +154,7 @@ export function Contact() {
                         <Text size="sm" c="dimmed">{method.description}</Text>
                       </div>
                     </Stack>
-                  </Box>
+                  </Anchor>
                 </motion.div>
               ))}
             </Box>
@@ -254,16 +252,24 @@ export function Contact() {
                     whileHover={{ scale: 1.1, y: -3 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Button
-                      variant="light"
-                      color={social.color}
-                      leftSection={<social.icon size={18} />}
-                      component={Anchor}
+                    <Anchor
                       href={social.url}
                       target="_blank"
+                      style={{
+                        textDecoration: 'none',
+                        padding: '8px 16px',
+                        borderRadius: '8px',
+                        background: `var(--mantine-color-${social.color}-1)`,
+                        color: `var(--mantine-color-${social.color}-6)`,
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        transition: 'all 0.2s ease',
+                      }}
                     >
+                      <social.icon size={18} />
                       {social.label}
-                    </Button>
+                    </Anchor>
                   </motion.div>
                 ))}
               </Group>
